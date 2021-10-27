@@ -14,7 +14,8 @@ custom:
     pythonBin: python3
     packRequirements: false
   pythonRequirements:
-    dockerizePip: non-linux
+    # "You need to have Docker installed to be able to set dockerizePip: true or dockerizePip: non-linux. Alternatively, you can set dockerizePip: false, and it will not use Docker packaging. But, Docker packaging is essential if you need to build native packages that are part of your dependencies like Psycopg2, NumPy, Pandas, etc." - https://www.serverless.com/blog/serverless-python-packaging
+    dockerizePip: non-linux 
   tableName: 'example-serverless-${self:provider.stage}'
   dynamodb:
     stages:
