@@ -23,12 +23,12 @@ def hello():
     return "Up and running!"
 
 
-@app.route("/product/<string:profile_id>")
-def get_profile(profile_id):
+@app.route("/product/<string:product_id>")
+def get_product(product_id):
     resp = client.get_item(
         TableName=DYNAMODB_TABLE,
         Key={
-            'productId': { 'S': profile_id }
+            'productId': { 'S': product_id }
         }
     )
     item = resp.get('Item')
@@ -43,20 +43,20 @@ def get_profile(profile_id):
 
 @app.route("/product", methods=["POST"])
 def create_profile():
-    profile_id = request.json.get('productId')
+    product_id = request.json.get('productId')
     productTitle = request.json.get('productTitle')
-    if not profile_id or not productTitle:
+    if not product_id or not productTitle:
         return jsonify({'error': 'Please provide productId and productTitle'}), 400
 
     res = client.put_item(
         TableName=DYNAMODB_TABLE,
         Item={
-            'productId': {'S': profile_id },
+            'productId': {'S': product_id },
             'productTitle': {'S': productTitle }
         }
     )
 
     return jsonify({
-        'productId': profile_id,
+        'productId': product_id,
         'productTitle': productTitle
     })
