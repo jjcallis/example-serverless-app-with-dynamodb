@@ -51,6 +51,7 @@ functions:
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
+      - http: 'ANY /{proxy+}'
       
 resources:
   Resources:
