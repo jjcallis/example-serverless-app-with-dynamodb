@@ -1,5 +1,12 @@
 
 
+# Globally install the serverless framework
+
+```
+npm install -g serverless
+```
+
+
 # Install the virtualenv
 
 ```
@@ -41,12 +48,6 @@ pip install boto3
 
 ```
 pip freeze > requirements.txt
-```
-
-# Globally install the serverless framework
-
-```
-npm install -g serverless
 ```
 
 # Install dynamodb locally
