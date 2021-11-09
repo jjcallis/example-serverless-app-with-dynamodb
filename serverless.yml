@@ -14,7 +14,6 @@ custom:
     app: app.app
     pythonBin: python3
     packRequirements: false
-  pythonRequirements:
     # In the custom dockerizePip, we are are stating the plugin(s) to use Docker when installing packages with pip. This will use a docker container that is similar to Lambda, so that the plugins/extensions are compatible.
     # Docker is required.
     dockerizePip: non-linux 
@@ -30,6 +29,7 @@ provider:
   name: aws
   runtime: python3.8
   stage: dev
+  profile: development
   region: eu-west-2
   iamRoleStatements:
     - Effect: Allow
@@ -50,7 +50,7 @@ functions:
     handler: wsgi_handler.handler
     events:
       - http: ANY /
-      - http: 'ANY /{proxy+}'
+      - http: ANY /{proxy+}
       
 resources:
   Resources:
