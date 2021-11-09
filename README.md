@@ -1,4 +1,28 @@
 
+
+# Install the virtualenv
+
+```
+pip install virtualenv
+```
+
+## Create the virtual environment
+```
+virtualenv venv --python=python3.8
+```
+
+## Activate the virtual environment
+
+```
+source venv/bin/activate
+```
+
+## Deactivate virtual environment
+
+```
+deactivate
+```
+
 # Install pacakages
 
 ```
@@ -29,29 +53,6 @@ npm install -g serverless
 
 ```
 sls dynamodb install
-```
-
-# Install the virtualenv
-
-```
-pip install virtualenv
-```
-
-## Create the virtual environment
-```
-virtualenv venv --python=python3.8
-```
-
-## Activate the virtual environment
-
-```
-source venv/bin/activate
-```
-
-## Deactivate virtual environment
-
-```
-deactivate
 ```
 
 # Local development
