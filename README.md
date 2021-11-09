@@ -68,13 +68,13 @@ sls dynamodb start >/dev/null
 sls wsgi serve -p 8080
 ```
 
-## Deploy onto AWS
+# Deploy onto AWS
 
 ```
 sls deploy
-``
+```
 
-## Remove deployment from AWS
+# Remove deployment from AWS
 
 ```
 serverless remove
