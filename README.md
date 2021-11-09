@@ -59,13 +59,13 @@ sls dynamodb install
 # Local development
 
 ```
-sls dynamodb start
+sls dynamodb start >/dev/null
 ```
 
 # Serve application
 
 ```
-sls wsgi serve -p 8000
+sls wsgi serve -p 8080
 ```
 
 ## Deploy onto AWS
