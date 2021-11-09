@@ -1,72 +1,79 @@
-# example-serverless-app-with-dynamodb
 
-# install pacakages and globally install the serverless framework
+# Install pacakages
+
 ```
 npm install
 ```
 
 ```
+pip install flask
+```
+
+```
+pip install boto3
+```
+
+# Freeze requirements
+
+```
+pip freeze > requirements.txt
+```
+
+# Globally install the serverless framework
+
+```
 npm install -g serverless
 ```
 
-# sls install for dynamo 
-```
-sls login
-```
+# Install dynamodb locally
+
 ```
 sls dynamodb install
 ```
 
-This will install dynamodb locally.
-
-
-# pip commands: 
-If you don't have pip you can install easily with the below command:
-``` 
-easy_install pip
-```
+# Install the virtualenv
 
 ```
 pip install virtualenv
 ```
 
-```
-pip3 install flask
-```
-
-```
-pip3 install boto3
-```
-
-```
-virtual env:
-```
+## Create the virtual environment
 ```
 virtualenv venv --python=python3.8
 ```
+
+## Activate the virtual environment
+
 ```
 source venv/bin/activate
 ```
 
-once you install new packages via pip update the requirements.txt file, this is used by the python virtual envrionment.
-```
-pip freeze > requirements.txt
-```
+## Deactivate virtual environment
 
 ```
-Local development
+deactivate
 ```
+
+# Local development
+
 ```
 sls dynamodb start
 ```
 
+# Serve application
+
 ```
-sls wsgi serve
+sls wsgi serve -p 8000
 ```
 
+## Deploy onto AWS
 
-# Removing the service. 
-This will remove the finctions, Events and Resources that were created. This will also delete the AWS resources.
+```
+sls deploy
+``
+
+## Remove deployment from AWS
+
 ```
 serverless remove
 ```
